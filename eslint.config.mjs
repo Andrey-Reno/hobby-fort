@@ -2,7 +2,6 @@ import js from '@eslint/js';
 import tseslint from 'typescript-eslint';
 import react from 'eslint-plugin-react';
 import reactHooks from 'eslint-plugin-react-hooks';
-
 import { FlatCompat } from '@eslint/eslintrc';
 import { fileURLToPath } from 'node:url';
 import { dirname } from 'node:path';
@@ -34,16 +33,11 @@ const config = [
         },
         settings: { react: { version: 'detect' } },
         rules: {
-            'prettier/prettier': 'warn',
             'no-console': ['warn', { allow: ['warn', 'error'] }],
             'react/react-in-jsx-scope': 'off',
             'react/prop-types': 'off',
             '@typescript-eslint/no-unused-vars': ['warn', { argsIgnorePattern: '^_' }],
             '@typescript-eslint/explicit-module-boundary-types': 'off',
-
-            'tailwindcss/classnames-order': 'warn',
-            'tailwindcss/no-custom-classname': 'off',
-            'tailwindcss/no-contradicting-classname': 'error',
         },
     },
 
