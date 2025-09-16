@@ -2,7 +2,6 @@ import js from '@eslint/js';
 import tseslint from 'typescript-eslint';
 import react from 'eslint-plugin-react';
 import reactHooks from 'eslint-plugin-react-hooks';
-import tailwindcss from 'eslint-plugin-tailwindcss';
 
 import { FlatCompat } from '@eslint/eslintrc';
 import { fileURLToPath } from 'node:url';
@@ -12,12 +11,12 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 const compat = new FlatCompat({ baseDirectory: __dirname });
 
-export default [
+const config = [
     ...compat.extends('next/core-web-vitals', 'next/typescript'),
 
     js.configs.recommended,
     ...tseslint.configs.recommended,
-    react.configs.recommended,
+    react.configs.flat.recommended,
     {
         plugins: { 'react-hooks': reactHooks },
         rules: reactHooks.configs.recommended.rules,
@@ -33,7 +32,6 @@ export default [
                 project: './tsconfig.json',
             },
         },
-        plugins: { tailwindcss },
         settings: { react: { version: 'detect' } },
         rules: {
             'prettier/prettier': 'warn',
@@ -53,3 +51,5 @@ export default [
         ignores: ['node_modules/**', '.next/**', 'out/**', 'build/**', 'next-env.d.ts'],
     },
 ];
+
+export default config;
