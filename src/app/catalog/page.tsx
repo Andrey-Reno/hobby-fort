@@ -1,5 +1,5 @@
-import Image from "next/image";
-import {Button} from "@/shared/ui/Button/Button";
+
+import {Button} from "@/shared/ui/Button";
 import Link from "next/link";
 
 export default function Home() {
@@ -7,6 +7,7 @@ export default function Home() {
     <div className='flex flex-col items-center justify-center'>
       <h1>Это каталожная страница</h1>
       <Link href="/">На главную</Link>
+      <Button variant='destructive'>Вот такие дела</Button>
     </div>
   );
 }

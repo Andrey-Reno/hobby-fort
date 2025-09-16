@@ -1,6 +1,5 @@
-import Image from "next/image";
-import {Button} from "@/shared/ui/Button/Button";
 import Link from "next/link";
+import {Button} from "@/shared/ui/Button";
 
 export default function Home() {
   return (
