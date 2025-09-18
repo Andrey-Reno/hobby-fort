@@ -58,7 +58,6 @@ export const Header = ({ revealOffset = 50, hideAfter = 100 }: Props) => {
     <header
       style={{
         transform: visible ? 'translateY(0)' : 'translateY(-100%)',
-        pointerEvents: visible ? 'auto' : 'none',
       }}
       className={headerClassnames}
     >
