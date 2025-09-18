@@ -7,7 +7,7 @@ import Image from 'next/image';
 
 export const Header = () => {
     return (
-        <header className="flex h-14 items-center justify-between outline">
+        <header className="bg-background flex h-14 items-center justify-between drop-shadow-xs">
             <div className="flex h-full">
                 <HeaderButton className="w-14">
                     <BurgerIcon className="size-6 text-white" />
