@@ -8,7 +8,6 @@ import {
   SheetFooter,
   SheetHeader,
   SheetTitle,
-  SheetTrigger,
 } from '@/shared/ui/Sheet';
 import { BurgerHeaderButton } from '@/widgets/Header/ui/BurgerHeaderButton';
 import { Button } from '@/shared/ui/Button';
@@ -25,7 +24,6 @@ export function BurgerMenu() {
     <>
       <BurgerHeaderButton onClick={onClick} />
       <Sheet open={isOpen} onOpenChange={setIsOpen}>
-        <SheetTrigger asChild></SheetTrigger>
         <SheetContent side={'left'} className="w-3/4">
           <SheetHeader>
             <SheetTitle>Заголовок</SheetTitle>
