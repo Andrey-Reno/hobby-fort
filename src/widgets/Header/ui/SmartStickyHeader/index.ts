@@ -1,0 +1,1 @@
+export { SmartStickyHeader } from './SmartStickyHeader';

@@ -1,8 +1,16 @@
 {
   "tabWidth": 2,
-  "printWidth": 100,
+  "printWidth": 80,
   "singleQuote": true,
   "tailWindStyleSheet": "@/app/globals.css",
-  "tailwindFunctions": ["clsx", "cn", "cva", "twMerge", "tw"],
-  "plugins": ["prettier-plugin-tailwindcss"]
+  "tailwindFunctions": [
+    "clsx",
+    "cn",
+    "cva",
+    "twMerge",
+    "tw"
+  ],
+  "plugins": [
+    "prettier-plugin-tailwindcss"
+  ]
 }

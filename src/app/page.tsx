@@ -1,6 +1,5 @@
 import Link from 'next/link';
 import { Button } from '@/shared/ui/Button';
-import Logo from '@/shared/ui/assets/logo-horizontal.svg';
 
 export default function Home() {
   return (
