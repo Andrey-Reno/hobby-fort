@@ -1,0 +1,1 @@
+export { CollapsingBarBehaviour } from './CollapsingBarBehaviour';

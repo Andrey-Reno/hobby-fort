@@ -11,7 +11,7 @@ export const useSmartSticky = (pixelsThreshold = 200) => {
     if (ticking.current) return;
     ticking.current = true;
 
-    window.requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
       const currentY = window.scrollY;
 
       const isScrollingDown = currentY > lastY.current;

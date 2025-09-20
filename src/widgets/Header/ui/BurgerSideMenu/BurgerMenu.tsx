@@ -9,7 +9,7 @@ import {
   SheetHeader,
   SheetTitle,
 } from '@/shared/ui/Sheet';
-import { BurgerHeaderButton } from '@/widgets/Header/ui/BurgerHeaderButton';
+import { BurgerButton } from '../BurgerButton';
 import { Button } from '@/shared/ui/Button';
 import { useCallback, useState } from 'react';
 
@@ -22,7 +22,7 @@ export function BurgerMenu() {
 
   return (
     <>
-      <BurgerHeaderButton onClick={onClick} />
+      <BurgerButton onClick={onClick} />
       <Sheet open={isOpen} onOpenChange={setIsOpen}>
         <SheetContent side={'left'} className="w-3/4">
           <SheetHeader>

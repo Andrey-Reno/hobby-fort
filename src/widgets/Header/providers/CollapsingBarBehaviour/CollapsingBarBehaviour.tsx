@@ -2,15 +2,19 @@
 
 import { useSmartSticky } from './useSmartSticky';
 import { ReactNode } from 'react';
+import { cn } from '@/shared/lib/cn';
 
 interface Props {
   children?: ReactNode;
 }
 
-export const HidingBehaviourProvider = ({ children }: Props) => {
+export const CollapsingBarBehaviour = ({ children }: Props) => {
   const isVisible = useSmartSticky(200);
 
-  const stickyClasses = `${isVisible ? 'translate-y-0' : '-translate-y-full'} transition-transform duration-300`;
+  const stickyClasses = cn(
+    isVisible ? 'translate-y-0' : '-translate-y-full',
+    'h-full transition-transform duration-300',
+  );
 
   return <div className={stickyClasses}>{children}</div>;
 };

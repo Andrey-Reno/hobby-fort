@@ -1,1 +1,0 @@
-export { HidingBehaviourProvider } from './HidingBehaviourProvider';

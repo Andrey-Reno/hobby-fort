@@ -1,1 +1,0 @@
-export { BurgerHeaderButton } from './BurgerHeaderButton';
