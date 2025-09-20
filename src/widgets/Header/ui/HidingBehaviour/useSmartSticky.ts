@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useRef, useState } from 'react';
 
-export const useSticky = (pixelsThreshold = 200) => {
+export const useSmartSticky = (pixelsThreshold = 200) => {
   const [isVisible, setIsVisible] = useState(true);
   const lastY = useRef(0);
   const ticking = useRef(false);

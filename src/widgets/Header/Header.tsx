@@ -1,43 +1,32 @@
-import { SmartStickyHeader } from './ui/SmartStickyHeader';
 import { BurgerMenu } from './ui/BurgerSideMenu';
 import { HeaderButton } from './ui/HeaderButton';
+import { Logo } from './ui/Logo';
 import Link from 'next/link';
-import Image from 'next/image';
 import { Search, ShoppingBasket } from 'lucide-react';
+import { HidingBehaviourProvider } from '@/widgets/Header/ui/HidingBehaviour';
 
-interface HeaderProps {
-  hideAfter?: number;
-}
-
-export const Header = ({ hideAfter = 200 }: HeaderProps) => {
+export const Header = () => {
   return (
-    <SmartStickyHeader hideAfter={hideAfter}>
-      <div className="bg-background flex h-14 items-center justify-between drop-shadow-xs">
-        <div className="flex h-full">
-          <BurgerMenu />
-          <HeaderButton variant={'ghost'} asChild>
-            <Link href={'/'}>
-              <Image
-                src="/assets/logo-horizontal.svg"
-                alt="Логотип магазина Hobby Fort"
-                width={96}
-                height={30}
-              />
-            </Link>
-          </HeaderButton>
-        </div>
+    <header className="sticky top-0 z-10">
+      <HidingBehaviourProvider>
+        <div className="bg-background container flex h-14 items-center justify-between drop-shadow-xs">
+          <div id="left-buttons" className="flex h-full">
+            <BurgerMenu />
+            <Logo />
+          </div>
 
-        <div className="h-full">
-          <HeaderButton variant="ghost" className="w-14 border-l-1">
-            <Search className="size-7 text-black" />
-          </HeaderButton>
-          <HeaderButton variant="ghost" className="w-14 border-l-1" asChild>
-            <Link href="/cart">
-              <ShoppingBasket className="size-7 text-black" />
-            </Link>
-          </HeaderButton>
+          <div id="right-buttons" className="h-full">
+            <HeaderButton variant="ghost" className="w-14 border-l-1">
+              <Search className="text-foreground size-7" />
+            </HeaderButton>
+            <HeaderButton variant="ghost" className="w-14 border-l-1" asChild>
+              <Link href="/cart">
+                <ShoppingBasket className="text-foreground size-7" />
+              </Link>
+            </HeaderButton>
+          </div>
         </div>
-      </div>
-    </SmartStickyHeader>
+      </HidingBehaviourProvider>
+    </header>
   );
 };
